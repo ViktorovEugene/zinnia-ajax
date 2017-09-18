@@ -7,6 +7,6 @@ class ZinniaAjaxConfig(AppConfig):
     """
     Config for Zinnia AJAX application.
     """
-    name = 'zinnia-ajax'
+    name = 'zinnia_ajax'
     label = 'zinnia-ajax'
     verbose_name = _('Zinnia Blog AJAX')

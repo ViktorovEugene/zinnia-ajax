@@ -2,3 +2,4 @@
 *.pyc
 .idea/
 venv/
+zinnia_ajax.egg-info/

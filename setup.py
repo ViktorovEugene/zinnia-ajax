@@ -4,7 +4,7 @@ from setuptools import find_packages
 import zinnia_ajax as package
 
 setup(
-    name='zinnia-blog-ajax',
+    name='zinnia_ajax',
     version=package.__version__,
     description='An extension for AJAX browsing of '
                 'Django Blog Zinnia',
