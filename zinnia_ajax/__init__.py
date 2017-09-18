@@ -1,5 +1,5 @@
 """Zinnia AJAX"""
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 __license__ = 'BSD License'
 
 __author__ = 'jeka_from_ua'
