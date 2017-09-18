@@ -15,13 +15,19 @@ function followLink(e) {
 
 function initAJAXBrowsing(follow_selector) {
     if (follow_selector === undefined) {
-        var follow_selector = false;
+        follow_selector = false;
     }
     if (ajaxLinkPattern === undefined) {
         ajaxLinkPattern = false;
     }
     if (ajaxLinkAntiPattern === undefined) {
         ajaxLinkAntiPattern = false;
+    }
+    if (persistentContentSelector === undefined) {
+        persistentContentSelector = false;
+    }
+    if (persistentContent === undefined) {
+        persistentContent = false;
     }
     var content = document.getElementById('restZinniaContent');
     content.querySelectorAll('a:not(.feeds)').forEach(function (item) {
@@ -35,6 +41,9 @@ function initAJAXBrowsing(follow_selector) {
             }
         }
     });
+    if (persistentContentSelector && persistentContent) {
+        content.querySelector(persistentContentSelector).innerHTML = persistentContent;
+    }
     if (follow_selector) {
         content.querySelector(follow_selector).click()
     }
