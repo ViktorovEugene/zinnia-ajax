@@ -29,9 +29,10 @@ function initAJAXBrowsing(follow_selector) {
     if (persistentContent === undefined) {
         persistentContent = false;
     }
-    var content = document.getElementById('restZinniaContent');
-    content.querySelectorAll('a:not(.feeds)').forEach(function (item) {
-        var href = item.getAttribute('href');
+    var content = document.getElementById('restZinniaContent'),
+        links = content.querySelectorAll('a:not(.feeds)');
+    for (var i = 0; i < links.length; i++) {
+        var item = links[i], href = item.getAttribute('href');
         if (ajaxLinkPattern && href) {
             if (ajaxLinkAntiPattern && href.split(ajaxLinkAntiPattern).length > 1) {
                 return
@@ -40,7 +41,7 @@ function initAJAXBrowsing(follow_selector) {
                 item.addEventListener('click', followLink, true);
             }
         }
-    });
+    }
     if (persistentContentSelector && persistentContent) {
         content.querySelector(persistentContentSelector).innerHTML = persistentContent;
     }
@@ -50,9 +51,9 @@ function initAJAXBrowsing(follow_selector) {
 }
 
 function dropAJAXBrowsing() {
-    document.getElementById('restZinniaContent')
-        .querySelectorAll('a').forEach(function (item) {
-        item.removeEventListener('click', followLink);
-    })
+    var links = document.getElementById('restZinniaContent').querySelectorAll('a');
+    for (var i = 0; i < links.length; i++) {
+        links[i].removeEventListener('click', followLink);
+    }
 }
 
